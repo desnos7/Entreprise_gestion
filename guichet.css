@@ -15,11 +15,11 @@ header {
 }
 .reseau{
  padding-top: 2%;
-padding-left: 10%;
+
 
 }
 .reseau>img{
-  margin-left: 10%;
+  margin-left: 8%;
 }
 
 img {
@@ -145,7 +145,6 @@ a {
   background-color: white;
   border-radius: 20px;
   margin-left: 12%;
-  height: 34%;
   width: 40%;
   position: absolute;
 }
@@ -153,6 +152,7 @@ a {
 /* front box content*/
 .login {
   padding: 30px;
+  padding-left: 10%;
   text-align: center;
 }
 
