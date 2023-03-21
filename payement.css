@@ -19,7 +19,7 @@ img {
   width: 150px;
   height: 150px;
 }
-.item2>img {
+.item2 > img {
   border: 1px solid black;
   width: 30px;
   height: 30px;
@@ -44,7 +44,8 @@ img {
 }
 section {
   padding-top: 80px;
-  height: 500px;
+  height: 100vh;
+  background-color: #ececec;
 }
 .menu1 {
   padding: 25px;
@@ -67,9 +68,7 @@ h1 {
   padding-left: 5%;
   padding-bottom: 3%;
 }
-.icon > i {
-  transform: translateX(-25px);
-}
+
 .icon > input {
   width: 286px;
   height: 42px;
@@ -103,7 +102,7 @@ h1 {
 }
 .box_item2 {
   margin: 0 auto;
-  margin-top: 55px;
+  margin-top: 25%;
   width: 70%;
   border: 1px solid black;
   height: 100px;
@@ -137,4 +136,59 @@ a {
   text-decoration: none;
   color: white;
 }
-/* super admin */
+
+.frontbox {
+  background-color: white;
+  border-radius: 20px;
+  margin-left: 12%;
+  height: 25%;
+  width: 50%;
+  position: absolute;
+}
+
+/* front box content*/
+.login {
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: #35b729;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  box-sizing: content-box;
+  padding: 10px;
+  border-radius: 10px;
+  width: 120px;
+
+  cursor: pointer;
+}
+
+/* Fade In & Out*/
+
+
+.box_item2 {
+  margin: 0 auto;
+  margin-top: 5%;
+  padding-top: 18px;
+  width: 50%;
+  border: 1px solid black;
+  height: 100px;
+  background: #ffffff;
+  border: transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+}
+.item1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 5%;
+  padding-bottom: 2%;
+}
+.item2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 5%;
+}
