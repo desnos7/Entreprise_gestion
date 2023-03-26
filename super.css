@@ -7,7 +7,6 @@
 
 header {
   padding-top: 50px;
-  height: 100vh;
   text-align: center;
   align-items: center;
   border: 1px solid black;
@@ -44,7 +43,6 @@ img {
 }
 section {
   padding-top: 80px;
-  height: 100vh;
   background-color: #ececec;
 }
 .menu1 {
