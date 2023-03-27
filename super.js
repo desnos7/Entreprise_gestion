@@ -1,104 +1,71 @@
-let btn= document.querySelector('button')
+let btn = document.querySelector("button");
 
-let fichier= document.querySelector('#id')
-let mdpasse= document.querySelector('#password')
-let email= document.querySelector('#Email')
-let firstname= document.querySelector('#nom')
+let fichier = document.querySelector("#id");
+let mdpasse = document.querySelector("#password");
+let profession= document.querySelector("#profession");
+let email = document.querySelector("#Email");
+let firstname = document.querySelector("#nom");
 
+fichier.addEventListener("change", () => {
+  const file = fichier.files[0];
+  const imageUrl = URL.createObjectURL(file);
+});
 
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
 
+  let admin = {
+    id: "",
+    firstname: firstname.value,
+    profession: profession.value,
+    email: email.value,
+    password: mdpasse.value,
+    image: fichier.value,
+  };
 
+  console.log(admin);
+  let superAdmin = JSON.parse(localStorage.getItem("admin"));
 
+  if (superAdmin) {
+    admin.id += "salut00" + parseInt(superAdmin.length + 1);
 
+    superAdmin.push(admin);
 
+    localStorage.setItem("admin", JSON.stringify(superAdmin));
+  } else {
+    superAdmin = [];
+    admin.id = "salut00" + parseInt(superAdmin.length + 1);
+    superAdmin.push(admin);
+    localStorage.setItem("admin", JSON.stringify(superAdmin));
+  }
+});
 
-fichier.addEventListener("change",()=>{
-    const file= fichier.files[0]
-    const imageUrl=URL.createObjectURL(file);
-})
-
-btn.addEventListener("click",(e)=>{
-
-
-    e.preventDefault()
+let superAdmin = JSON.parse(localStorage.getItem("admin"));
+console.log(superAdmin[0].image.split("\\")[2], "text");
+for (let i = 0; i < superAdmin.length; i++) {
+  let tache = ` <div class="item2"  id="${superAdmin[i].id}">
+    <img src=${superAdmin[i].image} alt="">
+      <p>${superAdmin[i].email}</p>
+      <p>${superAdmin[i].firstname}</p>
+     <p><i class="fa-sharp fa-solid fa-pen"></i><i class="fa-solid fa-trash" ></i></p>
     
-    let admin={
-        id:"",
-        firstname: firstname.value,
-       email:email.value,
-       password:mdpasse.value,
-       image:fichier.value
+    </div>`;
+  let container = document.querySelector(".box_item2");
 
-    }
-
-    
-console.log(admin);
-let administrateur =JSON.parse(localStorage.getItem("admin")) 
-
-if(administrateur){
-    admin.id+="salut00"+parseInt((administrateur.length)+1)
-  
-    administrateur.push(admin)
-    
-    localStorage.setItem("admin",JSON.stringify(administrateur))
-
-    
-  
-
-}else{
-    
-    administrateur=[]
-    admin.id='salut00' +parseInt((administrateur.length)+1)
-    administrateur.push(admin)
-    localStorage.setItem("admin",JSON.stringify(administrateur))
-
+  container.innerHTML += tache;
 }
 
-
-
-
-})
-
-
-let administrateur =JSON.parse(localStorage.getItem("admin")) 
-for (let i =0; i < administrateur.length; i++){
-    let tache =` <div class="item2"  id="${administrateur[i].id}">
-    <img src=${administrateur[i].image} alt="">
-      <p>${administrateur[i].firstname}</p>
-      <p>${administrateur[i].firstname}</p>
-     <p><i class="fa-solid fa-trash" ></i>DELETE</p>
-    
-    </div>`
-    let container = document.querySelector(".box_item2");
-
-
-    container.innerHTML +=tache 
-    
-}
-
-let icon=document.querySelectorAll(".fa-trash")
+let icon = document.querySelectorAll(".fa-trash");
 console.log(icon);
 
-for(let i =0; i < icon.length; i++){
- icon[i].addEventListener("click", (e)=>{
+for (let i = 0; i < icon.length; i++) {
+  icon[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    let id = e.target.closest(".item2").id;
 
-    e.preventDefault()
-    let id= e.target.closest('.item2').id
-    
     console.log(id);
-    
 
-if (condition) {
-    
+    if (condition) {
+    }
+  });
 }
-
-
- })
-
-}
-
- 
-
-
-
-

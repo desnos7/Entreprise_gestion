@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.contener {
+  width: 30vw;
+  height: 50vh;
+  padding-top: 50px;
+  overflow: hidden;
+}
+img {
+  width: 30vw;
+  height: 55vh;
+  object-fit: cover;
+}
+.imag {
+  position: absolute;
+  top: 20%;
+  left: 23%;
+  z-index: 1;
+}
+
+.inscription {
+  left: 53%;
+  top: 20%;
+  padding-left: 60px;
+  border: 1px solid black;
+  border-radius: 1px;
+  width: 25vw;
+  height: 55vh;
+  box-shadow: 2px 1px 3px gray;
+  position: absolute;
+  background-color: white;
+}
+
+h1 {
+  padding-bottom: 25px;
+  font-size: 50px;
+  margin-bottom: 35px;
+}
+p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+input {
+  padding: 15px;
+  width: 82%;
+  height: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+button {
+  position: absolute;
+  bottom: 25%;
+  padding: 15px;
+  width: 80%;
+  right: 55px;
+  border-radius: 8px;
+  border: 1px solid rgb(78, 221, 46, 0.5);
+  color: white;
+  font-size: 25px;
+  background-color: rgb(78, 221, 46, 0.5);
+}
+button:hover {
+  background-color: white;
+  color: rgb(78, 221, 46, 0.5);
+  transition: 2s;
+  cursor: pointer;
+}
