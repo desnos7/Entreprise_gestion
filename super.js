@@ -2,7 +2,7 @@ let btn = document.querySelector("button");
 
 let fichier = document.querySelector("#id");
 let mdpasse = document.querySelector("#password");
-let profession= document.querySelector("#profession");
+let profession = document.querySelector("#profession");
 let email = document.querySelector("#Email");
 let firstname = document.querySelector("#nom");
 
@@ -41,7 +41,6 @@ btn.addEventListener("click", (e) => {
 });
 
 let superAdmin = JSON.parse(localStorage.getItem("admin"));
-console.log(superAdmin[0].image.split("\\")[2], "text");
 for (let i = 0; i < superAdmin.length; i++) {
   let tache = ` <div class="item2"  id="${superAdmin[i].id}">
     <img src=${superAdmin[i].image} alt="">
@@ -67,5 +66,52 @@ for (let i = 0; i < icon.length; i++) {
 
     if (condition) {
     }
+  });
+}
+
+let creer = document.querySelector("#creer");
+let update = document.querySelectorAll(".fa-pen");
+
+for (let i = 0; i < update.length; i++) {
+  update[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    let id = e.target.closest(".item2").id;
+    console.log(id);
+
+    creer.style.display = "none";
+   
+
+    let superAdmin = JSON.parse(localStorage.getItem("admin"));
+    let finid = superAdmin.find((element) => element.id === id);
+    console.log(finid);
+
+    let put = `<div class="login" id="modifie">
+    <div class="inputbox">
+      <input type="text" name="nom" placeholder=" Nom" id="nome" value="${finid.firstname}">
+      <input type="text" name="profession" placeholder=" profession" id="profe" value="${finid.profession}">
+      <input type="password" name="password" placeholder="  PASSWORD" id="pass" value="${finid.password}">
+      <input type="text" name="email" placeholder="  EMAIL" id="mail" value="${finid.email}">
+      <input type="text" name="avatar" placeholder="  le lien image/https://source.unsplash.com/random?programming" id="idi" value="${finid.image}">
+    </div>
+    <button><i class="fa-solid fa-pen-to-square"></i>Update</button> 
+
+
+</div> `;
+
+    let modifier = document.querySelector(".frontbox");
+    modifier.innerHTML = put;
+  });
+
+  let miseAjour = document.querySelector("square");
+  console.log(miseAjour );
+
+  miseAjour.addEventListener("click", ()=> {
+    console.log("salut");
+    // let superAdmin = JSON.parse(localStorage.getItem("admin"));
+   
+
+    // filtrer = superAdmin.filter((element) => element.id !== id);
+
+    // superAdmin.push(finid);
   });
 }

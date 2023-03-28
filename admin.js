@@ -36,6 +36,8 @@ btn.addEventListener("click", (e) => {
 });
 let administrat = JSON.parse(localStorage.getItem("utilisateur")) || [];
 
+
+
 for (let i = 0; i < administrat.length; i++) {
   let tache = `<div class="item2" id='${administrat[i].id}'>
     <p>${administrat[i].nom}</p>
