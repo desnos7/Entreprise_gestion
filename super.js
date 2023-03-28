@@ -79,7 +79,6 @@ for (let i = 0; i < update.length; i++) {
     console.log(id);
 
     creer.style.display = "none";
-   
 
     let superAdmin = JSON.parse(localStorage.getItem("admin"));
     let finid = superAdmin.find((element) => element.id === id);
@@ -103,12 +102,11 @@ for (let i = 0; i < update.length; i++) {
   });
 
   let miseAjour = document.querySelector("square");
-  console.log(miseAjour );
+  console.log(miseAjour);
 
-  miseAjour.addEventListener("click", ()=> {
+  miseAjour.addEventListener("click", () => {
     console.log("salut");
     // let superAdmin = JSON.parse(localStorage.getItem("admin"));
-   
 
     // filtrer = superAdmin.filter((element) => element.id !== id);
 
