@@ -1,17 +1,15 @@
 let btn = document.querySelector("button");
 
-let nom= document.querySelector("#tache");
-let  prix = document.querySelector("#prix");
-
+let nom = document.querySelector("#tache");
+let prix = document.querySelector("#prix");
 
 btn.addEventListener("click", (e) => {
   e.preventDefault();
 
   let tache = {
     id: "",
-   nom: nom.value,
-    prix: prix.value
-  
+    nom: nom.value,
+    prix: prix.value,
   };
 
   console.log(tache);
@@ -32,11 +30,12 @@ btn.addEventListener("click", (e) => {
 });
 
 let tacheTravailleur = JSON.parse(localStorage.getItem("tache"));
-console.log(tacheTravailleur[0].image.split("\\")[2], "text");
+console.log(tacheTravailleur);
+
 for (let i = 0; i < tacheTravailleur.length; i++) {
   let tache = ` <div class="item2"  id="${tacheTravailleur[i].id}">
-      <p>${tacheTravailleur[i].email}</p>
-      <p>${tacheTravailleur[i].firstname}</p>
+      <p>${tacheTravailleur[i].nom}</p>
+      <p>${tacheTravailleur[i].prix}</p>
      <p><i class="fa-solid fa-trash" ></i>DELETE</p>
     
     </div>`;

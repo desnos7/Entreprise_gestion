@@ -82,9 +82,8 @@ for (let i = 0; i < update.length; i++) {
 
     let superAdmin = JSON.parse(localStorage.getItem("admin"));
     let finid = superAdmin.find((element) => element.id === id);
-    console.log(finid);
 
-    let put = `<div class="login" id="modifie">
+    let put = `<div class="login" id="${finid.id}" >
     <div class="inputbox">
       <input type="text" name="nom" placeholder=" Nom" id="nome" value="${finid.firstname}">
       <input type="text" name="profession" placeholder=" profession" id="profe" value="${finid.profession}">
@@ -92,7 +91,7 @@ for (let i = 0; i < update.length; i++) {
       <input type="text" name="email" placeholder="  EMAIL" id="mail" value="${finid.email}">
       <input type="text" name="avatar" placeholder="  le lien image/https://source.unsplash.com/random?programming" id="idi" value="${finid.image}">
     </div>
-    <button><i class="fa-solid fa-pen-to-square"></i>Update</button> 
+    <button onclick="miseAjour(event)"><i class="fa-solid fa-pen-to-square"></i>Update</button> 
 
 
 </div> `;
@@ -101,15 +100,31 @@ for (let i = 0; i < update.length; i++) {
     modifier.innerHTML = put;
   });
 
-  let miseAjour = document.querySelector("square");
-  console.log(miseAjour);
+  function miseAjour(e) {
+    let firstname = document.querySelector("#nome");
+    let mdpasse = document.querySelector("#pass");
+    let profession = document.querySelector("#profe");
+    let email = document.querySelector("#mail");
+   
 
-  miseAjour.addEventListener("click", () => {
     console.log("salut");
-    // let superAdmin = JSON.parse(localStorage.getItem("admin"));
+    e.preventDefault();
+    let ide = e.target.closest(".login").id;
+    console.log(ide);
+    let superAdmin = JSON.parse(localStorage.getItem("admin"));
+    let finid = superAdmin.find((element) => element.id === ide);
 
-    // filtrer = superAdmin.filter((element) => element.id !== id);
+     finid.email=email.value;
+     finid.firstname=firstname.value;
+     finid.profession=profession.value;
+     finid.mdpasse=mdpasse.value
+  
+    filter = superAdmin.filter((element) => element.id ===ide);
+    filter.push(finid)
 
-    // superAdmin.push(finid);
-  });
+    localStorage.setItem("admin", JSON.stringify(filter));
+  }
 }
+
+// let superAdmin = JSON.parse(localStorage.getItem("admin"));
+//     let finid = superAdmin.find((element) => element.id === ide);

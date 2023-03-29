@@ -11,9 +11,8 @@ btn.addEventListener("click", (e) => {
 
   let utilisateur = {
     id: "",
-    select:select.value,
+    select: select.value,
     nom: nom.value,
-  
     profession: profession.value,
     prix: prix.value,
   };
@@ -36,16 +35,16 @@ btn.addEventListener("click", (e) => {
 });
 let administrat = JSON.parse(localStorage.getItem("utilisateur")) || [];
 
-
-
 for (let i = 0; i < administrat.length; i++) {
   let tache = `<div class="item2" id='${administrat[i].id}'>
     <p>${administrat[i].nom}</p>
       <p>${administrat[i].select}</p>
       <p>${administrat[i].prix}</p>
       <div class="radio">
-     <input type="radio" id="yes" name="drone" value="huey" >
-     <input type="radio" id="not" name="drone" value="huey" >
+     <input type="radio" id="yes" name="choix${[i]}" class="salut" value="${
+    administrat[i].prix
+  }" >
+     <input type="radio" id="not" name="choix${[i]}"  class="salut" value="0" >
       </div>
      <div class="action">  <p><i class="fa-sharp fa-solid fa-pen"></i></p><p><i class="fa-solid fa-trash"></i></p><p><i class="fa-sharp fa-solid fa-paper-plane"></i></p>
     </div>
@@ -82,3 +81,44 @@ function debut() {
     });
   }
 }
+
+let envoyer = document.querySelectorAll(".fa-paper-plane");
+console.log(icon);
+
+for (let i = 0; i < envoyer.length; i++) {
+  envoyer[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("salut");
+    let id = e.target.closest(".item2").id;
+    console.log(id);
+    let administrat = JSON.parse(localStorage.getItem("utilisateur"));
+    let finid = administrat.find((element) => element.id === id);
+
+    let payer = {
+      id: finid.id,
+      select: finid.select,
+      nom: finid.nom,
+      profession: finid.profession,
+      prix: finid.prix,
+    };
+
+    console.log(payer);
+  });
+}
+
+let tacheTravailleur = JSON.parse(localStorage.getItem("tache"));
+
+tacheTravailleur.forEach((element) => {
+  let optionnon = `<option value="${element.id}">${element.nom}</option>`;
+  let optioprix = `<option value="${element.id}">${element.prix}</option>`;
+
+  let Select = document.querySelector("#pet-select");
+
+  Select.innerHTML += optionnon;
+
+  console.log(optioprix);
+
+});
+
+let Prix = document.querySelector("#prix");
+
