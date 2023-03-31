@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="payement.css" />
+    <link rel="stylesheet" href="guichet.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -18,70 +18,98 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+      integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
     <div class="container">
-        <header>
+      <header>
         <div class="menu1">
           <div class="i2"></div>
           <img src="cd49cb47-e228-4b90-8e92-62aeb88df01a.JPG" alt="" />
-          <p>nom prenom</p>
-          <p>Gmail.mail</p>
+          <p>Desnos Beugre</p>
+          <p>Desnos@gmail.com</p>
         </div>
 
         <div class="menu2">
-            <p>
-              <i class="fa-sharp fa-solid fa-house"></i>
-              <a href="index.html">TABLEAU</a>
-            </p>
-            <p>
-              <i class="fa-sharp fa-solid fa-coins"></i
-              ><a href="administrateur.html">ADMINISTRATEUR</a>
-            </p>
-  
-            <p>
-              <i class="fa-solid fa-user"></i><a href="SuperAdmin.html">SUPER ADMIN</a>
-            </p>
-            <p>
-              <i class="fa-solid fa-hand-holding-dollar"></i
-              ><a href="payement.html">PAYEMENT</a>
-            </p>
-            <p>
-              <i class="fa-solid fa-gear"></i
-              ><a href="parametre.html">PARAMETRE</a>
-            </p>
-            <p>
-              <i class="fa-solid fa-right-to-bracket"></i><a href="#">DECONEXION</a>
-            </p>
-          </div>
+          <p>
+            <i class="fa-sharp fa-solid fa-house"></i>
+            <a href="Acceuil.html">TABLEAU</a>
+          </p>
+          <p>
+            <i class="fa-sharp fa-solid fa-coins"></i
+            ><a href="administrateur.html">ADMINISTRATEUR</a>
+          </p>
+
+          <p>
+            <i class="fa-solid fa-user"></i
+            ><a href="SuperAdmin.html">SUPER ADMIN</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-hand-holding-dollar"></i
+            ><a href="payement.html">PAYEMENT</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-gear"></i
+            ><a href="parametre.html">PARAMETRE</a>
+          </p>
+          <p>
+            <i class="fa-solid fa-right-to-bracket"></i
+            ><a href="index.html">DECONEXION</a>
+          </p>
+        </div>
       </header>
 
       <section>
-      
+        
+        <h1>guichet</h1>
 
-        <h1>Payement</h1>
-       
+        <div class="frontbox">
+          <!-- <div class="reseau">
+            <img src="wave.webp" alt="" />
+            <img src="OrangeMoney.jpeg" alt="" />
+            <img src="Moov_Africa_logo.png" alt="" />
+            <img src="MTN money.jpeg" alt="" />
+          </div>
+
           <div class="login">
-            
-            <button><i class="fa-solid fa-user-plus"></i>Pas commencer</button>
-            <button><i class="fa-solid fa-user-plus"></i>En cours</button>
-            <button><i class="fa-solid fa-user-plus"></i>Terminer</button>
-    
+            <div class="inputbox">
+              
+              <input type="number" name="contact" placeholder=" Contact" />
+              <input type="number" name="number" placeholder="  prix" />
+              <button><i class="fa-solid fa-user-plus"></i>payer</button>
+            </div>
+          </div> -->
         </div>
-                                                                                                                                                                                                                                                                                                   
-        <div class="box_item2">
-          
 
-          <div class="item2">
+        <div class="box_item2">
+          <div class="item1">
             <p>Name</p>
-            <p>Tache</p>
+            <p>profession</p>
+            <p>tache</p>
             <p>prix</p>
-            <p><i class="fa-sharp fa-solid fa-paper-plane"></i>payer</p>
-          
+            <p>Contact</p>
+            <p>Action</p>
           </div>
         </div>
-
       </section>
     </div>
+    <script src="payement.js"></script>
+    <!-- <script>
+      let btn = document.querySelector("button");
+      console.log(btn);
+      btn.addEventListener("click", () => {
+        swal({
+          title: "EXCELLENT!",
+          text: "payement effectue!",
+          icon: "success",
+          button: "OK!",
+        });
+      });
+    </script> -->
   </body>
 </html>

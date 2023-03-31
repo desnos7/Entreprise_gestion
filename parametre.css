@@ -108,4 +108,37 @@
     
   }
   /* super admin */
-  
+  .profil{
+    width: 95%;
+    margin: 2% 4.5%;
+    display: flex;    
+    flex-wrap: wrap;
+}
+.profil div{
+    height: 230px;
+    padding: 20px;
+    width: 30%;
+    margin: 1%;
+    border-radius: 5px;
+    background-color: #2E374C;
+    border: 1px solid #2E374C;
+    /* background-color: #11A076; */
+
+}
+.profil h1{
+    font-size: 1.5rem;
+    margin: 15px;    
+    font-weight: 500;
+    color: #FFF;
+}
+.profil p{
+    color: #FFF;
+    line-height: 1.3;
+    font-size: 1.1rem;
+
+    padding: 10px;
+}
+.profil i{
+    color: #FFF;
+    float: right;
+}
